@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallControl : MonoBehaviour {
 
-	int rotationSpeed = 200;
+	public int rotationSpeed = 200;
 	int jumpHeight = 8;
 
 	float distToGround;
@@ -22,7 +22,7 @@ public class BallControl : MonoBehaviour {
 
 		if(Input.GetButtonDown("Jump") /*Input.GetKeyDown(KeyCode.Space)*/ && IsGrounded())
 		{
-			rigidbody.velocity = new Vector3(0, jumpHeight, 0);
+			rigidbody.velocity = new Vector3(rigidbody.velocity.x, jumpHeight, rigidbody.velocity.z);
 		}	
 	}
 
